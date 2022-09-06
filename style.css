@@ -1,0 +1,173 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.video-cont {
+    height: 99.98vh;
+    width: 99.98vw;
+    background: black;
+}
+
+body div video {
+    height: 100%;
+    width: 100%;
+}
+
+.action-cont {
+    height: 12rem;
+    width: 5rem;
+    position: absolute;
+    top: calc((100vh - 12rem) / 2);
+    right: 3.5rem;
+    color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.action-cont>* {
+    width: 100%;
+    height: 5rem;
+    border-radius: 50%;
+    border: 4.6px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.record-btn {
+    background: red;
+    height: 2.9rem;
+    width: 2.9rem;
+    border-radius: 50%;
+
+}
+
+.capture-btn {
+    background: white;
+    height: 2.9rem;
+    width: 2.9rem;
+    border-radius: 50%;
+}
+
+.scale-capture {
+    animation-name: scale-capture;
+    animation-iteration-count: 1;
+    animation-duration: 0.3s;
+}
+
+.scale-record {
+    animation-name: scale-record;
+    animation-iteration-count: infinite;
+    animation-duration: 0.8s;
+}
+
+@keyframes scale-record {
+    0% {
+        transform: scale(0.4);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes scale-capture {
+    0% {
+        transform: scale(0.4);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+.timer-cont {
+    position: absolute;
+    bottom: 15.5rem;
+    right: 3.1rem;
+    color: lightgoldenrodyellow;
+}
+
+.timer {
+    /* display: none; */
+    z-index: 2;
+}
+
+.filter-cont {
+    position: absolute;
+    top: calc((100vh - 16rem)/2);
+    left: 5rem;
+    height: 16rem;
+    width: 5rem;
+    z-index: 2;
+}
+
+.filter {
+    height: 4rem;
+    width: 100%;
+    background-image: url("https://picsum.photos/id/870/200/300?grayscale&blur=2");
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.color1{
+    background-color: rgba(244, 141, 141, 0.249);
+    background-blend-mode: color-burn;
+}
+.color2{
+    background-color: rgba(0, 0, 255, 0.18);
+    background-blend-mode: color-burn;
+}
+.color3{
+    background-color: rgba(144, 238, 144, 0.253);
+    background-blend-mode: color-burn;
+}
+
+.filter-layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 99.98vh;
+    width: 99.98vw;
+    z-index: 1;
+}
+
+.login-cont{
+    position: absolute;
+    right: 4rem;
+    top: 1rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    background: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 50%;
+    z-index: 2;
+}
+.message{
+    position: absolute;
+    right: 2.6rem;
+    top: 5rem;
+    color: white;
+    font-size: 20px;
+    padding: 0 4px;
+    display: none;
+}
+.login-cont:hover + .message {
+    display: block;
+}
+
+.link{
+    color: black;
+}
+
