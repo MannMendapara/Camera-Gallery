@@ -34,7 +34,7 @@
     </div>
     <div class="filter-layer"></div>
     <div class="login-cont">
-       <a class="link" href="./login1.html"> 
+       <!-- <a class="link" href="./login1.html">  -->
         <div class="login">
             <i class="fa-solid fa-user icon"></i>
         </div>
@@ -58,6 +58,12 @@
         let galleryele = document.querySelector(".gallery-cont")
         galleryele.addEventListener("click", (e) => {
             location.assign("./gallery.html")
+        })
+
+        let logincont = document.querySelector(".login-cont");
+        logincont.addEventListener("click", (e) => {
+            console.log("hello");
+            document.location.href = "login1.html";
         })
     </script>
 </body>

@@ -28,21 +28,21 @@ body{
 .gallery-cont{
     height: 100vh;
     width: 100vw;
-    background: #ced6e0;
+    background: #535c68;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .media-cont{
-    height: 17rem;
-    width: 17rem;
+    height: 12rem;
+    width: 12rem;
     border: 2px solid white;
     background: transparent;
     margin: 2rem;
 }
 .action{
-    height: 2.3rem;
+    height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
