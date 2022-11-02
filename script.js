@@ -30,12 +30,17 @@ navigator.mediaDevices.getUserMedia(constrains)
         recorder.addEventListener("stop", (e) => {
             // conversion of chunks to video
             let blob = new Blob(chunks, { type: "video/mp4" });
-            let videoURL = URL.createObjectURL(blob);
-
-            // let a = document.createElement("a");
-            // a.href = videoURL;
-            // a.download = "stream.mp4";
-            // a.click();
+           
+            if(db){
+                let videoid = shortid();
+                let dbtransection = db.transaction("video","readwrite")
+                let videostore = dbtransection.objectStore("video")
+                let videoentry = {
+                    id : `vid-${videoid}`,
+                    videodata : blob
+                }
+                videostore.add(videoentry); 
+            }
          })
      })
 
@@ -61,6 +66,8 @@ recordbtncont.addEventListener('click', (e) => {
 })
 
 capturebtncont.addEventListener("click", (e) => {
+    capturebtn.classList.add("scale-capture"); 
+
     let canvas = document.createElement("canvas");
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
@@ -71,13 +78,19 @@ capturebtncont.addEventListener("click", (e) => {
     //filtering on image
     tool.fillStyle = filtercolor;
     tool.fillRect(0, 0, canvas.width, canvas.height)
+    let imageURL = canvas.toDataURL();
     
-    // let imageURL = canvas.toDataURL();
-    // let a = document.createElement("a");
-    // a.href = imageURL;
-    // a.download = "image.jpg";
-    // a.click();
-
+    if(db){
+        let imageid = shortid();
+        let dbtransection = db.transaction("image","readwrite")
+        let imagestore = dbtransection.objectStore("image")
+        let imageentry = {
+            id : `img-${imageid}`,
+            url : imageURL
+        }
+        imagestore.add(imageentry); 
+    }
+    capturebtn.classList.remove("scale-capture");
 })
 
 let timerId;
