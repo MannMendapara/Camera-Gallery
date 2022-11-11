@@ -22,9 +22,11 @@ setTimeout(() => {
                 let url = URL.createObjectURL(videoobj.videodata);
                 mediaele.innerHTML = 
                 `<div class="media">
-                    <video autoplay loop src="${url}"></video>   
+                    <video autoplay loop>
+                    <source src="${url}">
+                    </video>   
                 </div>
-                <div class="delet action">DELET</div>
+                <div class="delet action">DELETE</div>
                 <div class="download action">DOWNLOAD</div>
                 </div>`;
                 
@@ -57,7 +59,7 @@ setTimeout(() => {
                 `<div class="media">
                     <image src="${url}" />   
                 </div>
-                <div class="delet action">DELET</div>
+                <div class="delet action">DELETE</div>
                 <div class="download action">DOWNLOAD</div>
                 </div>`;
                 
