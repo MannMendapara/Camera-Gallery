@@ -5,11 +5,12 @@
 body {
     margin: 0;
     padding: 0;
+    height: 99.3vh;
 }
 
 .video-cont {
-    height: 99.98vh;
-    width: 99.98vw;
+    height: 100%;
+    width: 100%;
     background: black;
 }
 
@@ -55,6 +56,14 @@ body div video {
     border-radius: 50%;
 }
 
+.record-btn:hover {
+    cursor: pointer;
+}
+
+.capture-btn:hover {
+    cursor: pointer;
+}
+
 .scale-capture {
     animation-name: scale-capture;
     animation-iteration-count: 1;
@@ -89,7 +98,7 @@ body div video {
 
 .timer-cont {
     position: absolute;
-    bottom: 15.5rem;
+    bottom: 10.3rem;
     right: 3.1rem;
     color: lightgoldenrodyellow;
 }
@@ -148,23 +157,16 @@ body div video {
     background: transparent;
     display: flex;
     border: 2px solid white;
+    color: white;
     justify-content: center;
     align-items: center;
     font-size: 30px;
     border-radius: 50%;
     z-index: 2;
 }
-.message{
-    position: absolute;
-    right: 2.6rem;
-    top: 6rem;
-    color: white;
-    font-size: 20px;
-    padding: 0 4px;
-    display: none;
-}
-.login-cont:hover + .message {
-    display: block;
+
+.login-cont:hover {
+    cursor: pointer;
 }
 
 .link{
