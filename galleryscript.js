@@ -6,7 +6,6 @@ backele.addEventListener("click", (e) => {
 
 setTimeout(() => {
     if(db){
-        
         // this is for video
         let videodbtransection = db.transaction("video", "readonly");
         let videostore = videodbtransection.objectStore("video");
